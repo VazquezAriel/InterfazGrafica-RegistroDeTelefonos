@@ -11,4 +11,6 @@ package ec.edu.ups.modelo;
  */
 public class Telefono {
     
+    private String codigo, numero, tipo, operadora;
+    
 }
