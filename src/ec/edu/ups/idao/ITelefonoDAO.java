@@ -5,10 +5,19 @@
  */
 package ec.edu.ups.idao;
 
+import ec.edu.ups.modelo.Telefono;
+import java.util.ArrayList;
+
 /**
  *
  * @author ariel
  */
-public class ITelefonoDAO {
+public interface ITelefonoDAO {
     
+    //Metodos CRUD
+    public void create(Telefono telefono);
+    public Telefono read(String codigo);
+    public void update(Telefono telefono);
+    public void delete(Telefono telefono);
+    public ArrayList<Telefono> mostrar();
 }

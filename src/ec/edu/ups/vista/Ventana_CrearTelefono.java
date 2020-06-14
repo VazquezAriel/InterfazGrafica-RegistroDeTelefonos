@@ -5,6 +5,13 @@
  */
 package ec.edu.ups.vista;
 
+import ec.edu.ups.controlador.ControladorTelefono;
+import ec.edu.ups.dao.TelefonoDAO;
+import ec.edu.ups.modelo.Telefono;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ariel
@@ -14,7 +21,14 @@ public class Ventana_CrearTelefono extends javax.swing.JFrame {
     /**
      * Creates new form Ventana_CrearTelefono
      */
+    
+    private ControladorTelefono ct;
+    private Ventana_ListaDeTelefonos vLista;
+    private DefaultListModel lista;
+    
     public Ventana_CrearTelefono() {
+        lista = new DefaultListModel<Telefono>();
+        ct = new ControladorTelefono(this, new TelefonoDAO());
         initComponents();
     }
 
@@ -27,57 +41,237 @@ public class Ventana_CrearTelefono extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelPrincipal = new javax.swing.JPanel();
+        labelInicioDeSecion = new javax.swing.JLabel();
+        labelTipo = new javax.swing.JLabel();
+        labelNumero = new javax.swing.JLabel();
+        labelCodigo = new javax.swing.JLabel();
+        labelOperadora = new javax.swing.JLabel();
+        txtNumero = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
+        txtTipo = new javax.swing.JTextField();
+        txtOperadora = new javax.swing.JTextField();
+        botonListar = new javax.swing.JButton();
+        botonCrear = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        panelPrincipal.setBackground(new java.awt.Color(0, 102, 102));
+        panelPrincipal.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 0, 0)));
+
+        labelInicioDeSecion.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelInicioDeSecion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelInicioDeSecion.setText("TELEFONO");
+
+        labelTipo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelTipo.setText("Tipo:");
+
+        labelNumero.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelNumero.setText("Numero:");
+
+        labelCodigo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelCodigo.setText("Codigo:");
+
+        labelOperadora.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelOperadora.setText("Operadora:");
+
+        txtNumero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumero.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        txtNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroActionPerformed(evt);
+            }
+        });
+
+        txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCodigo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoActionPerformed(evt);
+            }
+        });
+
+        txtTipo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTipo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        txtTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoActionPerformed(evt);
+            }
+        });
+
+        txtOperadora.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtOperadora.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        txtOperadora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOperadoraActionPerformed(evt);
+            }
+        });
+
+        botonListar.setBackground(new java.awt.Color(153, 153, 153));
+        botonListar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        botonListar.setText("Listar");
+        botonListar.setAutoscrolls(true);
+        botonListar.setBorder(null);
+        botonListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonListarActionPerformed(evt);
+            }
+        });
+
+        botonCrear.setBackground(new java.awt.Color(153, 153, 153));
+        botonCrear.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        botonCrear.setText("Crear");
+        botonCrear.setAutoscrolls(true);
+        botonCrear.setBorder(null);
+        botonCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCrearActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelPrincipalLayout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(labelInicioDeSecion)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelPrincipalLayout.createSequentialGroup()
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21)))
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNumero, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                            .addComponent(txtOperadora)
+                            .addComponent(txtTipo)
+                            .addComponent(txtCodigo)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                                .addComponent(botonListar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)))))
+                .addGap(40, 40, 40))
+        );
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(labelInicioDeSecion)
+                .addGap(40, 40, 40)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonListar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ventana_CrearTelefono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ventana_CrearTelefono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ventana_CrearTelefono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ventana_CrearTelefono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Ventana_CrearTelefono().setVisible(true);
-            }
-        });
-    }
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoActionPerformed
+
+    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoActionPerformed
+
+    private void txtOperadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOperadoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOperadoraActionPerformed
+
+    private void botonListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonListarActionPerformed
+        
+        if (vLista == null) {
+            vLista = new Ventana_ListaDeTelefonos();
+        } else {
+            vLista.limpiar();
+        }
+        
+        ArrayList telefonos = ct.mostrarTelefonos();
+        
+        for (int i = 0; i < telefonos.size(); i++) {
+            lista.add(i, telefonos.get(i));
+        }
+        
+        vLista.agregarLista(lista);
+        vLista.setVisible(true);
+    }//GEN-LAST:event_botonListarActionPerformed
+
+    private void botonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearActionPerformed
+        
+        String codigo = txtCodigo.getText();
+        String numero = txtNumero.getText();
+        String tipo = txtTipo.getText();
+        String operadora = txtOperadora.getText();
+        
+        if (codigo.trim().equals("") || numero.trim().equals("") || tipo.trim().equals("") || operadora.trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "Por favor llene todos los campos");
+        } else {
+            ct.crearTelefono(new Telefono(codigo, numero, tipo, operadora));
+            
+            txtCodigo.setText("");
+            txtNumero.setText("");
+            txtTipo.setText("");
+            txtOperadora.setText("");
+        }
+          
+    }//GEN-LAST:event_botonCrearActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonCrear;
+    private javax.swing.JButton botonListar;
+    private javax.swing.JLabel labelCodigo;
+    private javax.swing.JLabel labelInicioDeSecion;
+    private javax.swing.JLabel labelNumero;
+    private javax.swing.JLabel labelOperadora;
+    private javax.swing.JLabel labelTipo;
+    private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtOperadora;
+    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,8 @@
  */
 package ec.edu.ups.vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ariel
@@ -14,6 +16,8 @@ public class Ventana_IniciarSecion extends javax.swing.JFrame {
     /**
      * Creates new form Ventana_IniciarSecion
      */
+    
+    
     public Ventana_IniciarSecion() {
         initComponents();
     }
@@ -27,21 +31,137 @@ public class Ventana_IniciarSecion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelPrincipal = new javax.swing.JPanel();
+        labelTitulo = new javax.swing.JLabel();
+        labelInicioDeSecion = new javax.swing.JLabel();
+        labelUsuario = new javax.swing.JLabel();
+        labelContraseña = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        botonIniciarSesion = new javax.swing.JButton();
+        txtContraseña = new javax.swing.JPasswordField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        panelPrincipal.setBackground(new java.awt.Color(0, 102, 102));
+        panelPrincipal.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 51, 51)));
+        panelPrincipal.setAutoscrolls(true);
+
+        labelTitulo.setFont(new java.awt.Font("Niagara Engraved", 0, 48)); // NOI18N
+        labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTitulo.setText("Agenda Telefonica UPS");
+
+        labelInicioDeSecion.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelInicioDeSecion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelInicioDeSecion.setText("Inicio de Sesion");
+
+        labelUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelUsuario.setText("Usuario:");
+
+        labelContraseña.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelContraseña.setText("Contraseña:");
+
+        txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUsuario.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+
+        botonIniciarSesion.setBackground(new java.awt.Color(153, 153, 153));
+        botonIniciarSesion.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        botonIniciarSesion.setText("Iniciar Sesion");
+        botonIniciarSesion.setAutoscrolls(true);
+        botonIniciarSesion.setBorder(new javax.swing.border.MatteBorder(null));
+        botonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIniciarSesionActionPerformed(evt);
+            }
+        });
+
+        txtContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtContraseña.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(labelInicioDeSecion)
+                .addContainerGap(106, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtUsuario)
+                            .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
+                        .addGap(41, 41, 41))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                        .addComponent(botonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(116, 116, 116))))
+        );
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(labelInicioDeSecion)
+                .addGap(64, 64, 64)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(txtContraseña))
+                .addGap(31, 31, 31)
+                .addComponent(botonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
+
+    private void botonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarSesionActionPerformed
+        
+        String usuario = txtUsuario.getText();
+        String contraseña = txtContraseña.getText();
+        
+        if (usuario.trim().equals("") || contraseña.trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "Por favor llene todos los campos");
+        } else if (!usuario.equals("admin") || !contraseña.equals("1234")) {
+            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos");
+        } else {
+            Ventana_CrearTelefono vCrearTelefono = new Ventana_CrearTelefono();
+            vCrearTelefono.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_botonIniciarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +199,13 @@ public class Ventana_IniciarSecion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonIniciarSesion;
+    private javax.swing.JLabel labelContraseña;
+    private javax.swing.JLabel labelInicioDeSecion;
+    private javax.swing.JLabel labelTitulo;
+    private javax.swing.JLabel labelUsuario;
+    private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
